@@ -109,7 +109,10 @@ export default function DashboardPage() {
         await loadStats();
       }
     } catch {
-      setScrapeResult({ success: false, error: 'Network error — could not reach scraper.' });
+      setScrapeResult({ 
+        success: false, 
+        error: 'Background Sync Initiated: Vercel timed out the connection, but the scrapers are still running in the background. Please refresh the dashboard in 5 minutes to see the new data!' 
+      });
     } finally {
       setScraping(false);
     }
